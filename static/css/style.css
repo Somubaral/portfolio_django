@@ -1,0 +1,25 @@
+body {
+    scroll-behavior: smooth;
+}
+
+.hero-section {
+    background: linear-gradient(135deg, #000000, #1a1a1a);
+}
+
+.navbar a:hover {
+    color: #0dcaf0 !important;
+}
+
+.project-card {
+    transition: 0.3s;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0px 10px 20px rgba(0, 255, 255, 0.3);
+}
+
+h2 {
+    border-left: 4px solid #0dcaf0;
+    padding-left: 10px;
+}

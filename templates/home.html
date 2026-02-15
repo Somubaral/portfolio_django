@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top shadow">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="#">Saumya</a>
+    <div>
+      <a class="nav-link d-inline text-light" href="#about">About</a>
+      <a class="nav-link d-inline text-light" href="#skills">Skills</a>
+      <a class="nav-link d-inline text-light" href="#projects">Projects</a>
+      <a class="nav-link d-inline text-light" href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="vh-100 d-flex align-items-center text-center hero-section">
+  <div class="container">
+    <h1 class="display-3 fw-bold">Hi, I'm Saumya Kant Baral</h1>
+    <p class="lead">Django Developer | Python | REST APIs | Full Stack</p>
+    <a href="#projects" class="btn btn-outline-info btn-lg mt-3">View My Work</a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-5">
+  <div class="container">
+    <h2 class="text-info mb-4">About Me</h2>
+    <p>
+      Associate Application Developer experienced in building scalable Django applications,
+      REST APIs, and database-driven systems. Passionate about backend engineering and
+      performance optimization.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" class="py-5 bg-black">
+  <div class="container">
+    <h2 class="text-info mb-4">Skills</h2>
+
+    {% for skill in skills %}
+    <div class="mb-3">
+      <label>{{ skill.name }}</label>
+      <div class="progress bg-secondary">
+        <div class="progress-bar bg-info" style="width: 85%"></div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</section>
+
+<!-- PROJECTS -->
+<section id="projects" class="py-5">
+  <div class="container">
+    <h2 class="text-info mb-4">Projects</h2>
+    <div class="row">
+
+      {% for project in projects %}
+      <div class="col-md-4 mb-4">
+        <div class="card bg-black text-light shadow project-card">
+          <div class="card-body">
+            <h5 class="card-title text-info">{{ project.title }}</h5>
+            <p class="card-text">{{ project.description }}</p>
+            <small class="text-muted">{{ project.technologies }}</small>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="py-5 bg-black">
+  <div class="container text-center">
+    <h2 class="text-info mb-4">Contact Me</h2>
+    <p>Email: saumyakantbaral2001@gmail.com</p>
+    <a href="#" class="btn btn-info">Download Resume</a>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="text-center py-3 bg-dark">
+  <p>© 2026 Saumya Kant Baral | Built with Django</p>
+</footer>
+
+{% endblock %}
